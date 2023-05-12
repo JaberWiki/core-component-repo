@@ -1,0 +1,58 @@
+{
+    "name": "jaberwiki/core-component-repo",
+    "description": "My awesome package",
+    "keywords": [
+        "jaberwiki",
+        "core-component-repo"
+    ],
+    "homepage": "https://github.com/jaberwiki/core-component-repo",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mohammad Jaber",
+            "email": "jaberphpdev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "6.*",
+        "guzzlehttp/guzzle": "5.*|6.*"
+    },
+    "require-dev":{
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1",
+        "satooshi/php-coveralls": "^0.7.0",
+        "mockery/mockery": ">=0.7.2",
+        "phpspec/phpspec": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JaberWiki\\CoreComponentRepository\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JaberWiki\\CoreComponentRepository\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JaberWiki\\CoreComponentRepository\\CoreComponentRepositoryServiceProvider"
+            ],
+            "aliases": {
+                "CoreComponentRepository": "JaberWiki\\CoreComponentRepository\\CoreComponentRepositoryFacade"
+            }
+        }
+    }
+}
